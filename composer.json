@@ -1,7 +1,7 @@
 {
     "name": "primathonpay/mwarrior-api-php",
     "description" : "MWarrior PHP API library",
-    "version" : "1.1.0",
+    "version" : "1.2.0",
     "require" : {
         "php" : ">= 5.3.0",
         "ext-curl": "*",
