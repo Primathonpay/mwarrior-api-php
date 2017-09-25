@@ -1,5 +1,5 @@
 {
-    "name": "primathon/mwarrior-api-php",
+    "name": "primathonpay/mwarrior-api-php",
     "description" : "MWarrior PHP API library",
     "version": "1.0.0",
     "require" : {
@@ -9,6 +9,6 @@
         "ext-mbstring": "*"
     },
     "autoload": {
-     "psr-4": { "primathon\\" : "lib/mwarrior" }
+     "psr-4": { "primathonpay\\" : "lib/mwarrior" }
     }
 }
