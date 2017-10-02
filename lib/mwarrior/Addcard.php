@@ -1,10 +1,9 @@
 <?php
-namespace mwarrior;
+namespace primathonpay;
 
 class AddCard {
   public static $version = 2;
-
-  public $card;
+  
   public $gatewayResult;
 
   protected $_success_url;
@@ -20,22 +19,18 @@ class AddCard {
   protected $_card_exp_month;
   protected $_card_exp_year;
   protected $_gateway_result;
-  public function __construct() {
-    $this->card = new Card();
-    $this->gatewayResult = null;
-
-  }
 
   protected function _endpoint() {
      return Settings::$gatewayBase;
+  //    return  'https://www.google.com.au';
   }
 
   protected function _buildRequestMessage() {
     $request = array(
         'method' => 'addCard',
-        'merchantUUID' => Settings::$merchantUUID,
-        'apiKey' => Settings::$shopKey,
-        'cardName'=>  $this->getCardHolder(),
+        'merchantUUID' => $this->getMerchantUUID(), //Settings::$merchantUUID,
+        'apiKey' => $this->getApiKey(),  //Settings::$apiKey,
+        'cardName'=>  $this->getCcOwner(),
         'cardNumber' => $this->getCardNumber(),
         'cardExpiryMonth' => $this->getCardExpMonth(),
         'cardExpiryYear' => $this->getCardExpYear()
@@ -58,7 +53,7 @@ class AddCard {
   }
 
     protected function _remoteRequest() {
-        return Gatewaycommand::submit($this->_endpoint(), $this->_buildRequestMessage() );
+        return GatewayCommand::submit($this->_endpoint(), $this->_buildRequestMessage() );
     }
 
 
@@ -100,10 +95,10 @@ class AddCard {
     return $this->_card_number;
   }
 
-  public function setCardHolder($holder) {
+  public function setCcOwner($holder) {
     $this->_card_holder = $holder;
   }
-  public function getCardHolder() {
+  public function getCcOwner() {
     return $this->_card_holder;
   }
 
