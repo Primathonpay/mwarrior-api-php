@@ -1,5 +1,5 @@
 <?php
-namespace mwarrior;
+namespace primathonpay;
 
 class Payment {
   protected $_method;
@@ -70,7 +70,7 @@ class Payment {
   }
 
     protected function _remoteRequest() {
-        return GatewayTransport::submit($this->_endpoint(), $this->_buildRequestMessage() );
+        return GatewayCommand::submit($this->_endpoint(), $this->_buildRequestMessage() );
     }
 
 
