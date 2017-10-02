@@ -1,5 +1,5 @@
 <?php
-namespace mwarrior;
+namespace primathonpay;
 
 class Webhook extends Response {
 
