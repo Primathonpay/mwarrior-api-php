@@ -37,8 +37,8 @@ class Payment {
   protected function _buildRequestMessage() {
     $request = array(
         'method' => 'processCard',
-        'merchantUUID' => Settings::$merchantUUID,
-        'apiKey' => Settings::$shopKey,
+        'merchantUUID' => $this->getMerchantUUID(),
+        'apiKey' => $this->getApiKey(),
         'cardID' => $this->getToken(),
         'customerName' => $this->getCustomerName(),
         'customerCountry' => $this->getCountryId(),
