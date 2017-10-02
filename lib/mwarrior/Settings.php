@@ -1,6 +1,6 @@
 <?php
 
-namespace mwarrior;
+namespace primathonpay;
 
 class Settings {
   public static $merchantUUID = '';//merchantId
