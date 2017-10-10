@@ -1,7 +1,7 @@
 <?php
 namespace primathonpay;
 
-class AddCard {
+class Addcard {
   public static $version = 2;
   
   public $gatewayResult;
