@@ -25,8 +25,10 @@ class Payment {
   protected $_customer_state;
   protected $_customer_post_code;
   protected $_customer_phone;
+    protected $_customer_ip;
 
-  protected $_transaction_product;
+
+    protected $_transaction_product;
   protected $_transaction_amount;
   protected $_transaction_currency;
 
@@ -49,7 +51,8 @@ class Payment {
         'customerPhone' => $this->getTelephone(),
         'transactionAmount' => $this->getGrandTotal(),
         'transactionCurrency' => 'AUD',
-        'transactionProduct' => '$FOH-00100503',
+        'transactionProduct' => $this->getTransactionProduct(),
+        'customerIP' => $this->getCustomerIp(),
         'hash' => $this->getHash()
     );
   
@@ -167,6 +170,14 @@ class Payment {
   }
   public function getEmail() {
     return $this->_customer_email;
+  }
+
+  public function setCustomerIp($ip) {
+        $this->_customer_ip = $ip;
+    }
+
+  public function getCustomerIp() {
+      return $this->_customer_ip;
   }
 
   public function setFirstName($first_name) {
