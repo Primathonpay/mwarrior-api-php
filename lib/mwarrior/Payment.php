@@ -251,7 +251,7 @@ class Payment {
   }
 
   public function setTransactionProduct($transactionProduct) {
-    $this->_transaction_product;
+    $this->_transaction_product = $transactionProduct;
   }
 
   public function getTransactionProduct() {
