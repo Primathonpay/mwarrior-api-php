@@ -6,7 +6,7 @@ namespace primathonpay;
     public static $apiKey = '';//apiKey
     public static $apiPubKey = '';//apiPassPhrase
     public static $gatewayBase  = 'https://base.merchantwarrior.com/token/';
-    public static $checkoutBase = 'https://base.merchantwarrior.com/';
+    public static $checkoutBase = 'https://base.merchantwarrior.com/post/';
     public static $apiBase      = 'https://base.merchantwarrior.com/token/';
   }
   ?>
